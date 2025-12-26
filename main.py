@@ -47,6 +47,12 @@ class Simulation:
                     self.brush_size += event.y
 
     def update(self):
+        for y in range(self.data_size.y - 1, -1, -1):
+            x_range = range(self.data_size.x) if y % 2 else range(self.data_size.x - 1, -1, -1)
+            for x in x_range:
+                if not self.data[y][x].is_empty:
+                    self.data[y][x].simulate(self.data)
+
         if pygame.mouse.get_pressed()[0]:
             pos = vec2(*pygame.mouse.get_pos())
 
