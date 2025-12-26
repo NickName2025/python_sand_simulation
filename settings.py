@@ -2,4 +2,7 @@ from vec2 import vec2
 
 SCREEN_RESOLUTION = vec2(1440, 960)
 
+CEIL_SIZE = 10
+CHUNK_SIZE = 16
+
 FPS = 120
